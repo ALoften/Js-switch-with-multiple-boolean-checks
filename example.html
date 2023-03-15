@@ -1,0 +1,112 @@
+<html>
+  
+<body>  
+
+  <h1>
+    The script below allows you to use multiple boolean checks in one switch statement.
+
+  </h1>
+  <p>
+  This is normally taught as <i>"not possible."</i> Feel free to take a look at the code - its actually pretty simple. :)
+
+  </p>
+  <p>
+    Change the values to see a result...
+
+  </p>
+
+  <select id="first" onmousedown="this.value='';" onchange="multiValSwitch();">
+    <option value='1' selected>One</option>
+    <option value='2'>Two</option>
+    <option value='3'>Three</option>
+    <option value='4'>Four</option>
+    <option value='5'>Five</option>
+    <option value='6'>Six</option>
+    <option value='7'>Seven</option>
+    <option value='8'>Eight</option>
+    <option value='9'>Nine</option>
+    <option value='10'>Ten</option> 
+
+  </select>
+
+  >
+
+  <select id="second" onmousedown="this.value='';" onchange="multiValSwitch();">
+    <option value='1' selected>One</option>
+    <option value='2'>Two</option>
+    <option value='3'>Three</option>
+    <option value='4'>Four</option>
+    <option value='5'>Five</option>
+    <option value='6'>Six</option>
+    <option value='7'>Seven</option>
+    <option value='8'>Eight</option>
+    <option value='9'>Nine</option>
+    <option value='10'>Ten</option> 
+
+  </select>
+
+  <br>
+  And
+  <br>
+
+  <select id="third" onchange="multiValSwitch();">
+    <option value='1' selected>One</option>
+    <option value='2'>Two</option>
+    <option value='3'>Three</option>
+    <option value='4'>Four</option>
+    <option value='5'>Five</option>
+    <option value='6'>Six</option>
+    <option value='7'>Seven</option>
+    <option value='8'>Eight</option>
+    <option value='9'>Nine</option>
+    <option value='10'>Ten</option> 
+
+  </select>
+
+  >
+
+  <select id="fourth" onchange="multiValSwitch();">
+    <option value='1' selected>One</option>
+    <option value='2'>Two</option>
+    <option value='3'>Three</option>
+    <option value='4'>Four</option>
+    <option value='5'>Five</option>
+    <option value='6'>Six</option>
+    <option value='7'>Seven</option>
+    <option value='8'>Eight</option>
+    <option value='9'>Nine</option>
+    <option value='10'>Ten</option> 
+
+  </select>
+  
+  <script>
+    function multiValSwitch() {
+      let first = document.getElementById("first");
+      let second = document.getElementById("second");
+      let third = document.getElementById("third");
+      let fourth = document.getElementById("fourth");
+
+      let firstCheck = parseInt(first.options[first.selectedIndex].value) > parseInt(second.options[second.selectedIndex].value);
+      let secondCheck = parseInt(third.options[third.selectedIndex].value) > parseInt(fourth.options[fourth.selectedIndex].value);
+
+      switch (firstCheck + secondCheck) {
+          case true + true:
+              alert("Both are true");
+              break; 
+          case true + false:
+              alert("One is true and one is false");
+              break; 
+          case false + false:
+              alert("Both are false");
+              break; 
+          default: 
+              alert("Should not see this...but it means the result was unexpected");
+      }
+
+    }
+    
+  </script>
+  
+</body>  
+  
+</html>
